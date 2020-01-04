@@ -35,6 +35,7 @@ type DeprecatedCondOperator =
   | 'ends'
   | 'cont'
   | 'excl'
+  | 'any'
   | 'in'
   | 'notin'
   | 'isnull'
@@ -52,6 +53,7 @@ export enum CondOperator {
   ENDS = '$ends',
   CONTAINS = '$cont',
   EXCLUDES = '$excl',
+  ANY = '$any',
   IN = '$in',
   NOT_IN = '$notin',
   IS_NULL = '$isnull',
@@ -85,6 +87,7 @@ export type SFieldOperator = {
   $ends?: SFiledValues;
   $cont?: SFiledValues;
   $excl?: SFiledValues;
+  $any?: SFiledValues;
   $in?: SFiledValues;
   $notin?: SFiledValues;
   $between?: SFiledValues;

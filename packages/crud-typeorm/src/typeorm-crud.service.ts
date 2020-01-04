@@ -856,6 +856,10 @@ export class TypeOrmCrudService<T> extends CrudService<T> {
         params = { [param]: `%${cond.value}%` };
         break;
 
+      case '$any':
+        str = `${field} = ANY (:${param})`;
+        break;
+
       case '$in':
         this.checkFilterIsArray(cond);
         str = `${field} IN (:...${param})`;
